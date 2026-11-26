@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How hourly funding works on Bitnxs perpetuals | Bitnxs Labs</title>
+<meta name="description" content="Funding on Bitnxs is exchanged between longs and shorts every hour. Worked example, one week of BTC/ETH/SOL funding history and the limits of what is published.">
+<link rel="canonical" href="https://bitnxs-labs.github.io/funding.html">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website"><meta property="og:title" content="How hourly funding works on Bitnxs perpetuals | Bitnxs Labs"><meta property="og:description" content="Funding on Bitnxs is exchanged between longs and shorts every hour. Worked example, one week of BTC/ETH/SOL funding history and the limits of what is published."><meta property="og:url" content="https://bitnxs-labs.github.io/funding.html"><meta property="og:site_name" content="Bitnxs Labs">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"How hourly funding works on Bitnxs perpetuals | Bitnxs Labs","description":"Funding on Bitnxs is exchanged between longs and shorts every hour. Worked example, one week of BTC/ETH/SOL funding history and the limits of what is published.","url":"https://bitnxs-labs.github.io/funding.html","isPartOf":{"@type":"WebSite","name":"Bitnxs Labs","url":"https://bitnxs-labs.github.io/"},"publisher":{"@type":"Organization","name":"Bitnxs Labs","url":"https://www.bitnxs.com","sameAs":["https://github.com/Bitnxs-Labs"]}}</script>
+</head><body>
+<header><div class="wrap"><a class="brand" href="index.html">Bitnxs Labs</a><nav aria-label="Main"><a href="index.html">Overview</a> <a href="markets-and-fees.html">Markets & fees</a> <a href="funding.html" aria-current="page">Funding</a> <a href="ai-agent-api.html">AI agent & API</a> <a href="risk-and-regions.html">Risk & regions</a> <a href="links.html">Links</a></nav></div></header>
+<main><div class="wrap">
+
+<h1>How hourly funding works</h1>
+<p>A perpetual future has no expiry, so funding keeps its price near the underlying. On Bitnxs, funding is a payment exchanged between long and short holders and settles every hour, 24 times a day. A positive rate means longs pay shorts. According to the <a href="https://docs.bitnxs.com/funding-rate/">funding documentation</a>, Bitnxs is not a party to those payments and does not receive them.</p>
+<h2>What is published and what is not</h2>
+<p>The rate is determined dynamically by the deviation between the mark price and the index price. No closed-form formula is published, so this site does not invent one. The current estimate is on the trading screen as "Estimated funding" and through the public <code>marketSummary</code> query, whose <code>fundingRate</code> field is a percent per hour (<code>0.0100</code> means 0.0100% of mark-price notional for that hour).</p>
+<h2>Worked example (illustrative)</h2>
+<p>At the snapshot below, a long of 1 BTC at a mark of 60,435.59 USDC, if the hourly rate stayed at +0.0100%, would pay about 6.04 USDC to shorts for that hour (60,435.59 × 0.0001). The rate is re-set every hour and can change or turn negative.</p>
+<h2>Snapshot and one week of history</h2>
+<table><thead><tr><th>Market</th><th>Max leverage</th><th>Mark (USDC)</th><th>Index (USDC)</th><th>Funding per hour</th><th>24h price change</th></tr></thead><tbody>
+<tr><td>BTC-USDC</td><td>50x</td><td>60,435.59</td><td>60,454.44</td><td>+0.0100%</td><td>-0.28%</td></tr>
+<tr><td>ETH-USDC</td><td>50x</td><td>1,689.35</td><td>1,689.68</td><td>+0.0100%</td><td>-0.74%</td></tr>
+<tr><td>SOL-USDC</td><td>20x</td><td>70.82</td><td>70.85</td><td>+0.0100%</td><td>-0.14%</td></tr></tbody></table>
+<p class="note">Source: <code>POST https://api.bitnxs.com/info</code> (<code>marketSummary</code>, <code>meta</code>), November 26, 2026, about 8:57 AM Pacific Time (America/Los_Angeles). A snapshot of a moving market, not a forecast and not a return.</p>
+<p>The <code>fundingHistory</code> query returned 168 hourly points for each market from November 19, 2026 at 9:00 AM to November 26, 2026 at 8:00 AM Pacific Time. BTC ranged from 0.0073% to 0.0100% per hour (average about 0.0097%). ETH and SOL showed 0.0100% at every point. History is not a prediction of future funding.</p>
+<h2>Hourly versus 8-hour funding</h2>
+<table><thead><tr><th></th><th>Hourly (Bitnxs)</th><th>8-hour (common elsewhere)</th></tr></thead><tbody>
+<tr><td>Settlements per day</td><td>24</td><td>3</td></tr>
+<tr><td>Rate for the same daily cost</td><td>0.00125% per hour</td><td>0.01% per 8 hours</td></tr>
+<tr><td>Daily cost</td><td>0.03%</td><td>0.03%</td></tr></tbody></table>
+<p class="note">Teaching comparison from the Bitnxs docs, not a live rate.</p>
+<p class="risk"><strong>Risk warning.</strong> Perpetual futures with leverage can lose all of your margin quickly, possibly at a price worse than the mark price and without prior notice. Bitnxs is not available to people in the United States, Canada, the United Kingdom or Mainland China, or other restricted persons defined in the <a href="https://docs.bitnxs.com/legal/terms/">Terms of Service</a>. Nothing on this site is financial advice or a promise of returns.</p>
+</div></main>
+<footer><div class="wrap">Maintained by the Bitnxs team. Official app: <a href="https://www.bitnxs.com">www.bitnxs.com</a> · Official docs: <a href="https://docs.bitnxs.com">docs.bitnxs.com</a>. If anything here disagrees with the <a href="https://docs.bitnxs.com/legal/terms/">Terms of Service</a>, the Terms prevail. Data snapshot: November 26, 2026, about 8:57 AM Pacific Time.</div></footer>
+</body></html>

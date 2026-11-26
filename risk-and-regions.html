@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bitnxs risks, withdrawals and restricted regions | Bitnxs Labs</title>
+<meta name="description" content="Plain-language risks of leveraged perpetuals on Bitnxs, how withdrawals work (about 5 minute review), what has not been audited, and the restricted regions.">
+<link rel="canonical" href="https://bitnxs-labs.github.io/risk-and-regions.html">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website"><meta property="og:title" content="Bitnxs risks, withdrawals and restricted regions | Bitnxs Labs"><meta property="og:description" content="Plain-language risks of leveraged perpetuals on Bitnxs, how withdrawals work (about 5 minute review), what has not been audited, and the restricted regions."><meta property="og:url" content="https://bitnxs-labs.github.io/risk-and-regions.html"><meta property="og:site_name" content="Bitnxs Labs">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Bitnxs risks, withdrawals and restricted regions | Bitnxs Labs","description":"Plain-language risks of leveraged perpetuals on Bitnxs, how withdrawals work (about 5 minute review), what has not been audited, and the restricted regions.","url":"https://bitnxs-labs.github.io/risk-and-regions.html","isPartOf":{"@type":"WebSite","name":"Bitnxs Labs","url":"https://bitnxs-labs.github.io/"},"publisher":{"@type":"Organization","name":"Bitnxs Labs","url":"https://www.bitnxs.com","sameAs":["https://github.com/Bitnxs-Labs"]}}</script>
+</head><body>
+<header><div class="wrap"><a class="brand" href="index.html">Bitnxs Labs</a><nav aria-label="Main"><a href="index.html">Overview</a> <a href="markets-and-fees.html">Markets & fees</a> <a href="funding.html">Funding</a> <a href="ai-agent-api.html">AI agent & API</a> <a href="risk-and-regions.html" aria-current="page">Risk & regions</a> <a href="links.html">Links</a></nav></div></header>
+<main><div class="wrap">
+
+<h1>Risk &amp; restricted regions</h1>
+<h2>Trading risk</h2>
+<p>Leveraged perpetual futures magnify losses as well as gains. A small move against a high-leverage position can liquidate your margin in full, possibly at a price worse than the mark price and without prior notice. If the insurance fund cannot cover a liquidation shortfall, auto-deleveraging may close opposing profitable positions. There is no promised return, no yield product and no guarantee of profit.</p>
+<h2>Infrastructure and custody-related risk</h2>
+<ul>
+<li>Deposits are USDC on Arbitrum One. While funds are in the deposit contract they are not in your wallet.</li>
+<li>The deposit contract is upgradeable and upgrades are managed by Bitnxs Labs; an upgrade may change how it behaves. The contract address is not currently published in the documentation.</li>
+<li>No independent security audit of the deposit contract or Bitnxs Chain has been published.</li>
+<li>Withdrawals are executed after a review and delay window of about five minutes, during which a withdrawal may be held or rejected.</li>
+<li>Oracle and mark prices depend on external sources that can fail, lag or be manipulated. Transactions are generally irreversible.</li>
+</ul>
+<h2>Restricted regions</h2>
+<p>Bitnxs is not available to Restricted Persons as defined in the <a href="https://docs.bitnxs.com/legal/terms/">Terms of Service</a>: any person or entity residing in, located in, incorporated in or with a registered office in the United States (and its territories), Canada, the United Kingdom, Mainland China, Cuba, Iran, North Korea, Syria, the Crimea region, or the so-called Donetsk and Luhansk People's Republics, or any other jurisdiction designated from time to time, as well as sanctioned persons and anyone acting for them. You must also be of legal age where you live.</p>
+<h2>Who Bitnxs is not for</h2>
+<ul><li>Anyone who needs a demo or paper-trading account.</li><li>Anyone who needs instant, guaranteed withdrawals.</li><li>Anyone who cannot afford to lose their entire deposit.</li></ul>
+<p>Read the <a href="https://docs.bitnxs.com/legal/terms/">Terms of Service</a> and the <a href="https://docs.bitnxs.com/support/faq/">FAQ</a> before depositing. This site is not financial, legal or tax advice.</p>
+<p class="risk"><strong>Risk warning.</strong> Perpetual futures with leverage can lose all of your margin quickly, possibly at a price worse than the mark price and without prior notice. Bitnxs is not available to people in the United States, Canada, the United Kingdom or Mainland China, or other restricted persons defined in the <a href="https://docs.bitnxs.com/legal/terms/">Terms of Service</a>. Nothing on this site is financial advice or a promise of returns.</p>
+</div></main>
+<footer><div class="wrap">Maintained by the Bitnxs team. Official app: <a href="https://www.bitnxs.com">www.bitnxs.com</a> · Official docs: <a href="https://docs.bitnxs.com">docs.bitnxs.com</a>. If anything here disagrees with the <a href="https://docs.bitnxs.com/legal/terms/">Terms of Service</a>, the Terms prevail. Data snapshot: November 26, 2026, about 8:57 AM Pacific Time.</div></footer>
+</body></html>

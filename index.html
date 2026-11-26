@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bitnxs Labs: AI-agent perpetual futures on-chain protocol, docs and facts</title>
+<meta name="description" content="Reference site by the Bitnxs team: BTC, ETH and SOL perpetuals, USDC margin, hourly funding, 0.02%/0.05% fees, API and AI-agent quickstart, risks and restricted regions.">
+<link rel="canonical" href="https://bitnxs-labs.github.io/">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website"><meta property="og:title" content="Bitnxs Labs: AI-agent perpetual futures on-chain protocol, docs and facts"><meta property="og:description" content="Reference site by the Bitnxs team: BTC, ETH and SOL perpetuals, USDC margin, hourly funding, 0.02%/0.05% fees, API and AI-agent quickstart, risks and restricted regions."><meta property="og:url" content="https://bitnxs-labs.github.io/"><meta property="og:site_name" content="Bitnxs Labs">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Bitnxs Labs: AI-agent perpetual futures on-chain protocol, docs and facts","description":"Reference site by the Bitnxs team: BTC, ETH and SOL perpetuals, USDC margin, hourly funding, 0.02%/0.05% fees, API and AI-agent quickstart, risks and restricted regions.","url":"https://bitnxs-labs.github.io/","isPartOf":{"@type":"WebSite","name":"Bitnxs Labs","url":"https://bitnxs-labs.github.io/"},"publisher":{"@type":"Organization","name":"Bitnxs Labs","url":"https://www.bitnxs.com","sameAs":["https://github.com/Bitnxs-Labs"]}}</script>
+</head><body>
+<header><div class="wrap"><a class="brand" href="index.html">Bitnxs Labs</a><nav aria-label="Main"><a href="index.html" aria-current="page">Overview</a> <a href="markets-and-fees.html">Markets & fees</a> <a href="funding.html">Funding</a> <a href="ai-agent-api.html">AI agent & API</a> <a href="risk-and-regions.html">Risk & regions</a> <a href="links.html">Links</a></nav></div></header>
+<main><div class="wrap">
+
+<h1>Bitnxs: an AI-agent perpetual futures protocol, on-chain</h1>
+<p>Bitnxs is an on-chain protocol for USDC-margined perpetual futures on BTC, ETH and SOL. This small site is maintained by the Bitnxs team as a plain-language reference: what the protocol offers, the numbers that matter, how funding and fees work, how an AI agent or script can read public market data, and the risks. The app is at <a href="https://www.bitnxs.com">www.bitnxs.com</a> and the full documentation is at <a href="https://docs.bitnxs.com">docs.bitnxs.com</a>.</p>
+<h2>At a glance</h2>
+<table><tbody>
+<tr><th>Markets</th><td>BTC-USDC, ETH-USDC and SOL-USDC perpetual futures.</td></tr>
+<tr><th>Max leverage</th><td>50x on BTC and ETH; 20x on SOL</td></tr>
+<tr><th>Margin and settlement</th><td>USDC</td></tr>
+<tr><th>Funding</th><td>Settled every hour between longs and shorts</td></tr>
+<tr><th>Base trading fees</th><td>0.02% maker / 0.05% taker</td></tr>
+<tr><th>Deposits</th><td>USDC on Arbitrum One</td></tr>
+<tr><th>Withdrawals</th><td>Review of about 5 minutes; may be held or rejected</td></tr>
+<tr><th>Wallets</th><td>MetaMask or any EIP-1193 browser wallet</td></tr>
+<tr><th>Demo mode</th><td>None; every order uses real funds</td></tr>
+</tbody></table>
+<h2>Live snapshot (November 26, 2026)</h2>
+<table><thead><tr><th>Market</th><th>Max leverage</th><th>Mark (USDC)</th><th>Index (USDC)</th><th>Funding per hour</th><th>24h price change</th></tr></thead><tbody>
+<tr><td>BTC-USDC</td><td>50x</td><td>60,435.59</td><td>60,454.44</td><td>+0.0100%</td><td>-0.28%</td></tr>
+<tr><td>ETH-USDC</td><td>50x</td><td>1,689.35</td><td>1,689.68</td><td>+0.0100%</td><td>-0.74%</td></tr>
+<tr><td>SOL-USDC</td><td>20x</td><td>70.82</td><td>70.85</td><td>+0.0100%</td><td>-0.14%</td></tr></tbody></table>
+<p class="note">Source: <code>POST https://api.bitnxs.com/info</code> (<code>marketSummary</code>, <code>meta</code>), November 26, 2026, about 8:57 AM Pacific Time (America/Los_Angeles). A snapshot of a moving market, not a forecast and not a return.</p>
+<h2>Explore</h2>
+<ul>
+<li><a href="markets-and-fees.html">Markets &amp; fees</a>: leverage limits, fee schedule, liquidation fee.</li>
+<li><a href="funding.html">Funding</a>: how hourly funding works, with a worked example and a week of history.</li>
+<li><a href="ai-agent-api.html">AI agent &amp; API quickstart</a>: public data queries, the in-app agent and the open-source Grok Bot template.</li>
+<li><a href="risk-and-regions.html">Risk &amp; restricted regions</a>: what can go wrong and who cannot use Bitnxs.</li>
+<li><a href="links.html">Official links</a>.</li>
+</ul>
+<p>Official counterpart: <a href="https://www.bitnxs.com">www.bitnxs.com</a>.</p>
+<p class="risk"><strong>Risk warning.</strong> Perpetual futures with leverage can lose all of your margin quickly, possibly at a price worse than the mark price and without prior notice. Bitnxs is not available to people in the United States, Canada, the United Kingdom or Mainland China, or other restricted persons defined in the <a href="https://docs.bitnxs.com/legal/terms/">Terms of Service</a>. Nothing on this site is financial advice or a promise of returns.</p>
+</div></main>
+<footer><div class="wrap">Maintained by the Bitnxs team. Official app: <a href="https://www.bitnxs.com">www.bitnxs.com</a> · Official docs: <a href="https://docs.bitnxs.com">docs.bitnxs.com</a>. If anything here disagrees with the <a href="https://docs.bitnxs.com/legal/terms/">Terms of Service</a>, the Terms prevail. Data snapshot: November 26, 2026, about 8:57 AM Pacific Time.</div></footer>
+</body></html>

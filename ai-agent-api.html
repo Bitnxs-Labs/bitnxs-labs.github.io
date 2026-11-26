@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bitnxs AI agent and API quickstart: public data, in-app agent, Grok Bot template | Bitnxs Labs</title>
+<meta name="description" content="Read Bitnxs market data with no account via POST /info, and see how the experimental in-app AI agent and the open-source Grok Bot template relate to the official API docs.">
+<link rel="canonical" href="https://bitnxs-labs.github.io/ai-agent-api.html">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website"><meta property="og:title" content="Bitnxs AI agent and API quickstart: public data, in-app agent, Grok Bot template | Bitnxs Labs"><meta property="og:description" content="Read Bitnxs market data with no account via POST /info, and see how the experimental in-app AI agent and the open-source Grok Bot template relate to the official API docs."><meta property="og:url" content="https://bitnxs-labs.github.io/ai-agent-api.html"><meta property="og:site_name" content="Bitnxs Labs">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Bitnxs AI agent and API quickstart: public data, in-app agent, Grok Bot template | Bitnxs Labs","description":"Read Bitnxs market data with no account via POST /info, and see how the experimental in-app AI agent and the open-source Grok Bot template relate to the official API docs.","url":"https://bitnxs-labs.github.io/ai-agent-api.html","isPartOf":{"@type":"WebSite","name":"Bitnxs Labs","url":"https://bitnxs-labs.github.io/"},"publisher":{"@type":"Organization","name":"Bitnxs Labs","url":"https://www.bitnxs.com","sameAs":["https://github.com/Bitnxs-Labs"]}}</script>
+</head><body>
+<header><div class="wrap"><a class="brand" href="index.html">Bitnxs Labs</a><nav aria-label="Main"><a href="index.html">Overview</a> <a href="markets-and-fees.html">Markets & fees</a> <a href="funding.html">Funding</a> <a href="ai-agent-api.html" aria-current="page">AI agent & API</a> <a href="risk-and-regions.html">Risk & regions</a> <a href="links.html">Links</a></nav></div></header>
+<main><div class="wrap">
+
+<h1>AI agent &amp; API quickstart</h1>
+<p>Start with read-only data. Public market data needs no account and no key. Everything beyond that is documented at <a href="https://docs.bitnxs.com/api/">docs.bitnxs.com/api</a> and <a href="https://docs.bitnxs.com/ai-agent/">docs.bitnxs.com/ai-agent</a>.</p>
+<h2>1. Public market data</h2>
+<p>Send a JSON body with a <code>type</code> field to <code>POST https://api.bitnxs.com/info</code>.</p>
+<pre>curl -s -X POST https://api.bitnxs.com/info \
+  -H 'content-type: application/json' \
+  -d '{"type":"allMids"}'
+
+curl -s -X POST https://api.bitnxs.com/info \
+  -H 'content-type: application/json' \
+  -d '{"type":"marketSummary","coin":"BTC"}'</pre>
+<p>Other queries used on this site: <code>meta</code>, <code>feeSchedule</code> and <code>fundingHistory</code> (with a <code>coin</code> field). When an agent reports a number, it should print the time it was read.</p>
+<h2>2. The in-app AI agent (experimental)</h2>
+<p>Per the <a href="https://docs.bitnxs.com/ai-agent/">AI agent docs</a>, the app has an experimental chat panel where an LLM you connect (any OpenAI-compatible endpoint, using your own key stored in your browser) reads your live account state and proposes a long, short or wait view. The docs list what it can do (switch market, switch side, place limit orders, read the account) and what it cannot (change leverage or margin mode, place market orders, cancel or modify orders, set TP/SL triggers). Orders run against your live session on real funds.</p>
+<h2>3. Grok Bot template (open source)</h2>
+<p>The <a href="https://github.com/Bitnxs-Labs/bitnxs-grokbot">bitnxs-grokbot</a> repository (MIT license) is a template for the Grok Bot platform: a read-only market-brief skill using public data, a getting-started conversation, and an optional trading skill that works through your own Bitnxs API key. <code>scripts/snapshot.py</code> is a read-only market snapshot using only the Python standard library. Treat any API key as a secret and never paste it into a public place.</p>
+<h2>Limits</h2>
+<p>An AI agent can misread data, use stale prices or act on a bad prompt. A model's long or short call is an opinion with no guaranteed edge. Bitnxs has no demo mode, so test with read-only queries first.</p>
+<p class="risk"><strong>Risk warning.</strong> Perpetual futures with leverage can lose all of your margin quickly, possibly at a price worse than the mark price and without prior notice. Bitnxs is not available to people in the United States, Canada, the United Kingdom or Mainland China, or other restricted persons defined in the <a href="https://docs.bitnxs.com/legal/terms/">Terms of Service</a>. Nothing on this site is financial advice or a promise of returns.</p>
+</div></main>
+<footer><div class="wrap">Maintained by the Bitnxs team. Official app: <a href="https://www.bitnxs.com">www.bitnxs.com</a> · Official docs: <a href="https://docs.bitnxs.com">docs.bitnxs.com</a>. If anything here disagrees with the <a href="https://docs.bitnxs.com/legal/terms/">Terms of Service</a>, the Terms prevail. Data snapshot: November 26, 2026, about 8:57 AM Pacific Time.</div></footer>
+</body></html>
